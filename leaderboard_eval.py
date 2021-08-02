@@ -101,7 +101,7 @@ if __name__ == '__main__':
                                      'FastMRI challenge Leaderboard Image Evaluation',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     
-    parser.add_argument('-g', '--GPU_NUM', type=int, default=1)
+    parser.add_argument('-g', '--GPU_NUM', type=int, default=0)
     parser.add_argument('-lp', '--leaderboard_data_path', type=str, default='../Data/image_Leaderboard/')
     """
     Modify Path Below To Test Your Results
