@@ -49,18 +49,18 @@ def forward(args):
     torch.cuda.set_device(device)
     
     leaderboard_data = glob.glob(os.path.join(args.leaderboard_data_path,'*.h5'))
-    if len(leaderboard_data) != 50:
-        raise  NotImplementedError('Leaderboard Data Size Should Be 50')
+    if len(leaderboard_data) != 58:
+        raise  NotImplementedError('Leaderboard Data Size Should Be 58')
     
     your_data = glob.glob(os.path.join(args.your_data_path,'*.h5'))
-    if len(your_data) != 50:
-        raise  NotImplementedError('Your Data Size Should Be 50')           
+    if len(your_data) != 58:
+        raise  NotImplementedError('Your Data Size Should Be 58')           
     
     ssim_total = 0
     idx = 0
     ssim_calculator = SSIM().to(device=device)
     with torch.no_grad():
-        for i_subject in range(50):
+        for i_subject in range(58):
             l_fname = os.path.join(args.leaderboard_data_path, 'brain_test' + str(i_subject+1) + '.h5')
             y_fname = os.path.join(args.your_data_path, 'brain_test' + str(i_subject+1) + '.h5')
             with h5py.File(l_fname, "r") as hf:
